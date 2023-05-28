@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Профиль GitHub</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .profile-card {
+            max-width: 450px;
+            margin: 20px auto;
+        }
+        
+        .profile-picture {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+        
+        .profile-details {
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Поиск профиля GitHub</h3>
+                <div class="form-group">
+                    <label for="username-input">Введите логин GitHub:</label>
+                    <input type="text" class="form-control" id="username-input">
+                </div>
+                <button class="btn btn-primary" id="getBtn" onclick="showProfile()">Показать профиль</button>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-card card">
+                    <img class="profile-picture card-img-top" id="profile-picture" src="" alt="Фотография профиля">
+                    <div class="card-body">
+                        <h5 class="card-title" id="profile-name"></h5>
+                        <p class="card-text" id="profile-details"></p>
+                        <br>
+                        <p id="frname">Name: </p>
+                        <p id="login">Login: </p>
+                        <p id="link">Link: </p>
+                        <p id="blog">Blog Link: </p>
+                        <p id="city">City: </p>
+                        <p id="e-mail">E-mail: </p>
+                        <p id="follower">Follower: </p>
+                        <p id="following">Following: </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="taskjs.js">
+
+    </script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function showProfile() {
+            var username = document.getElementById("username-input").value;
+            var url = "https://api.github.com/users/" + username;
+            
+            $.ajax({
+                url: url,
+                success: function(profile) {
+                    document.getElementById("profile-name").textContent = profile.name || profile.login;
+                    document.getElementById("profile-picture").src = profile.avatar_url;
+                    document.getElementById("profile-details").innerHTML = "<strong>Логин:</strong> " + (profile.login || "") + "<br>" +
+                        "<strong>Имя:</strong> " + (profile.name || "") + "<br>" +
+                        "<strong>Фамилия:</strong> " + (profile.surname || "") + "<br>" +
+                        "<strong>E-mail:</strong> " + (profile.email || "") + "<br>" +
+                        "<strong>Организация:</strong> " + (profile.company || "") + "<br>" +
+                        "<strong>Биография:</strong> " + (profile.bio || "");
+                },
+                error: function() {
+                    document.getElementById("profile-name").textContent = "Профиль не найден";
+                    document.getElementById("profile-picture").src = "";
+                    document.getElementById("profile-details").textContent = "";
+                }
+            });
+        }
+    </script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</body>
+</html>
